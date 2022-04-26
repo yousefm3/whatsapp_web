@@ -1,0 +1,32 @@
+[
+  {
+    "contact": {
+      "username": "dora",
+      "displayName": "dora sutton",
+      "avatar": "dora.svg"
+    },
+    "messages": [
+      {
+        "content": "Good morning, How are you? What about our next meeting?",
+        "time": "2022-04-22T17:08:47.825Z"
+      },
+      {
+        "image": "https://www.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg",
+        "time": "2022-04-22T18:00:34.825Z"
+      },
+      {
+        "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "time": "2022-05-23T22:00:44.825Z"
+      },
+
+      {
+        "audio": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Sample-OGG-File.ogg",
+        "time": "2022-06-12T07:21:45.825Z"
+      },
+      {
+        "content": "Hey, I'm going to meet a friend of mine at the department store. I have to buy some presents for my parents 🎁",
+        "time": "2022-06-12T07:24:45.825Z"
+      }
+    ]
+  }
+]
