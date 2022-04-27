@@ -1,3 +1,8 @@
+# how to run:
+download file->open the cmd-> type: npm i ->type: npm start, then the apps run, register then login, press the add contact buttun,
+the name of the contacts will be shown in this form, try adding "dora" to see all type of messages.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
