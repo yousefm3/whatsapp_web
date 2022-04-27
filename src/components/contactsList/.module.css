@@ -1,0 +1,7 @@
+.contacts_list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  list-style: none;
+}
