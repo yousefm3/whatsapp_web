@@ -2,31 +2,43 @@
   {
     "username": "phillip",
     "displayName": "phillip morse",
-    "avatar": "phillip.png"
+    "avatar": "phillip.png",
+    "password": "12345678",
+    "contacts": []
   },
   {
     "username": "mark",
     "displayName": "mark poole",
-    "avatar": "mark.png"
+    "avatar": "mark.png",
+    "password": "12345678",
+    "contacts": []
   },
   {
     "username": "dora",
     "displayName": "dora sutton",
-    "avatar": "dora.svg"
+    "avatar": "dora.svg",
+    "password": "12345678",
+    "contacts": []
   },
   {
     "username": "lara",
     "displayName": "lara prsons",
-    "avatar": "lara.png"
+    "avatar": "lara.png",
+    "password": "12345678",
+    "contacts": []
   },
   {
     "username": "max",
     "displayName": "maxine hamilton",
-    "avatar": "max.png"
+    "avatar": "max.png",
+    "password": "12345678",
+    "contacts": []
   },
   {
     "username": "evie",
     "displayName": "evie harrell",
-    "avatar": "evie.png"
+    "avatar": "evie.png",
+    "password": "12345678",
+    "contacts": []
   }
 ]

@@ -1,4 +1,4 @@
-const validateRegister = (data) => {
+const validateRegister = (data,users) => {
   const { username, password, passwordConfirmation, displayName } = data;
 
   //   Check If One Of The Required Fields Is Missed
@@ -7,6 +7,14 @@ const validateRegister = (data) => {
       isValid: false,
       type: "danger",
       msg: "Please enter all the required fields to create a user",
+    };
+  }
+  //   Check If User Is Already Registered
+  if(users?.find((user)=>user?.username===username)){
+  return {
+      isValid: false,
+      type: "danger",
+      msg: "User Is Already Registered",
     };
   }
   //   Check If UserName Length Is Less Than 3 Characters

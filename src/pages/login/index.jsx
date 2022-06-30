@@ -7,7 +7,7 @@ import readFormData from "../../utils/readFormData";
 import validateLogin from "../../validators/validateLogin";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ user, setNotification }) {
+export default function Login({ user, setUser, users, setNotification }) {
   const navigate = useNavigate();
   const [formObject, setFormObject] = useState(null);
 
@@ -15,25 +15,33 @@ export default function Login({ user, setNotification }) {
   useEffect(() => {
     // Validate The Login User Data
     if (formObject) {
-      if (user?.credentials?.username) {
         const { isValid, msg, type } = validateLogin(
           { username: formObject.username, password: formObject.password },
-          user?.credentials
+          users
         );
         setNotification({ msg, type });
 
         // If All IS OK ( ALL DATA IS VALID )
         if (isValid) {
+          setUser({
+            credentials:{
+              username: formObject.username,
+              password: formObject.password
+            },
+            avatar: formObject.avatar,
+            displayName: formObject.displayName,
+            contacts: []
+          })
           navigate("/");
         }
-      } else {
+       else {
         setNotification({
           type: "danger",
           msg: "Username or password is incorrect",
         });
-      }
+       }
     }
-  }, [formObject, user, setNotification, navigate]);
+  }, [formObject, setNotification, navigate, users]);
 
   return (
     <div className="container d-flex align-items-center justify-content-center">

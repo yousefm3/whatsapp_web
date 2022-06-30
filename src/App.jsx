@@ -15,10 +15,12 @@ import NotificationToast from "./components/toast";
 import ChatScreen from "./pages/chatScreen";
 import Modal from "./components/modal";
 import chatsDB from "./data/chats.json";
+import usersDB from "./data/contacts.json";
 
 export default function App() {
   // APP GLOBAL STATES
   const [user, setUser] = useState(null);
+  const [users, setUsers] = useState(usersDB);
   const [notification, setNotification] = useState("");
   const [currentChat, setCurrentChat] = useState(null);
   const [chats, setChats] = useState(chatsDB);
@@ -28,10 +30,6 @@ export default function App() {
       setUser(JSON.parse(window.localStorage.getItem("user")));
     }
   }, []);
-
-  useEffect(() => {
-    console.log(chats);
-  }, [chats]);
 
   useEffect(() => {
     if (user) {
@@ -54,11 +52,12 @@ export default function App() {
           index
           path="/"
           element={
-            <AuthGuard setNotification={setNotification} user={user}>
+            <AuthGuard setNotification={setNotification} setUser={setUser} user={user} users={users}>
               <ChatScreen
                 chats={chats}
                 setChats={setChats}
                 user={user}
+                users={users}
                 currentChat={currentChat}
                 setCurrentChat={setCurrentChat}
               />
@@ -68,12 +67,12 @@ export default function App() {
         <Route
           path="/register"
           element={
-            <Register setUser={setUser} setNotification={setNotification} />
+            <Register setUsers={setUsers} users={users} setNotification={setNotification} />
           }
         />
         <Route
           path="/login"
-          element={<Login user={user} setNotification={setNotification} />}
+          element={<Login user={user} setUser={setUser} users={users} setNotification={setNotification} />}
         />
       </Routes>
     </BrowserRouter>

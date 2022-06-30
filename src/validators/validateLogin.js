@@ -1,8 +1,6 @@
-const validateLogin = (enteredCredintals, userCredintals) => {
-  if (
-    enteredCredintals.username !== userCredintals.username ||
-    enteredCredintals.password !== userCredintals.password
-  ) {
+const validateLogin = (enteredCredintals, users) => {
+  console.log(users);
+  if (!users?.find((user)=>user.username===enteredCredintals.username&&user.password===enteredCredintals.password)) {
     return {
       isValid: false,
       type: "danger",
@@ -13,6 +11,7 @@ const validateLogin = (enteredCredintals, userCredintals) => {
       isValid: true,
       type: "success",
       msg: "Logged In successfully",
+      loggedUser: users?.find((user)=>user.username===enteredCredintals.username&&user.password===enteredCredintals.password)
     };
   }
 };
